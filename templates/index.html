@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>DPA</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+
+
+
+</head>
+
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a href="#" class="navbar-brand">iTec<span>Now</span></a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto">
+					<a href="#" class="nav-item nav-link active">Home</a>
+					<a href="#virt" class="nav-item nav-link">Virtualizations</a>
+					<a href="#misc" class="nav-item nav-link">Misc</a>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<section class="ABC">
+
+		<div class="container">
+
+
+			<div class="row" id="div1">
+				<div class="col-lg-6">
+					<h1>Diabetes Prediction Analysis</h1>
+					<p class="lead">
+						Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high.
+						Over time, having too much glucose in your blood can cause health problems, such as heart
+						disease, nerve damage, eye problems, and kidney disease.
+
+						An estimated 30.3 million people in the United States have diabetes. About one in four people
+						with diabetes don’t know they have the disease. An estimated 84.1 million Americans aged 18
+						years or older have prediabetes.
+						The earlier diagnosis is obtained, the much easier we can control it. Machine learning can help
+						people make a preliminary judgment about diabetes mellitus according to their daily physical
+						examination data, and it can serve as a reference for doctors.
+
+						<a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database" class="text-success"
+							target="_blank">[DataSet]</a> , 
+						<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6232260/#:~:text=The%20earlier%20diagnosis%20is%20obtained,et%20al.%2C%202017)." class="text-success"
+						target="_blank">[1]</a>
+
+					</p>
+
+
+
+					<!-- <p>
+									Pregnancies: Number of previous pregnancies
+									Glucose: Plasma glucose concentration
+									BloodPressure: Diastolic blood pressure
+									SkinThickness: Skin fold thickness measured from the triceps
+									Insulin : Blood serum insulin concentration
+									BMI: Body mass index
+									DiabetesPedigreeFunction: A summarized score that indicates the genetic predisposition of the patient for diabetes, as extrapolated from the patient's family record for diabetes
+									Age: Age in years
+								
+
+
+								</p> -->
+
+
+
+
+
+
+
+
+					<p>Simply enter data and click predict to see the results</p>
+
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<p>Example of postive case:
+									<li><b>Pregnacies: </b>6</li>
+									<li><b>Glucose: </b>148</li>
+									<li><b>BloodPressure: </b>72</li>
+									<li><b>SkinThickness: </b>35</li>
+									<li><b>Insulin: </b>0</li>
+									<li><b>BMI: </b>33.6</li>
+									<li><b>Pedigree: </b>0.627</li>
+									<li><b>Age: </b>50</li>
+								</p>
+							</div>
+							<div class="col">
+								<p>Example of negative case:
+									<li><b>Pregnacies: </b>1</li>
+									<li><b>Glucose: </b>85</li>
+									<li><b>BloodPressure: </b>66</li>
+									<li><b>SkinThickness: </b>29</li>
+									<li><b>Insulin: </b>0</li>
+									<li><b>BMI: </b>26.6</li>
+									<li><b>Pedigree: </b>0.351</li>
+									<li><b>Age: </b>31</li>
+								</p>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+				</div>
+				<div class="col-lg-6">
+
+					<div class="wrapper">
+						<h2>Predict Diabetes with <span>Machine Learning</span></h2>
+						<form method="POST" , action="{{url_for('home')}}">
+							<div class="row">
+								<div class="col">
+									<p>Total Previous Pregnacies</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='a' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+								<div class="col">
+									<p>Glucose</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='b' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+								<div class="w-100"></div>
+								<div class="col">
+									<p>Blood Pressure</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='c' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+								<div class="col">
+									<p>Skin Fold Thickness</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='d' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+								<div class="w-100"></div>
+								<div class="col">
+									<p>Blood Serum Insulin</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='e' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+								<div class="col">
+									<p>BMI</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='f' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+								<div class="w-100"></div>
+								<div class="col">
+									<p>Diabetes Pedigree Function</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='g' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+								<div class="col">
+									<p>Age</p>
+									<div class="input-box">
+										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='h' ,
+											placeholder="Enter Number" required>
+									</div>
+								</div>
+							</div>
+
+							<div class="input-box button">
+								<input type="submit" value="predict">
+							</div>
+							<!-- <div class="text">
+
+								<h3 id="res">Results are: </h3>
+
+								{%if data == 0%}
+								<h1>No diabetes</h1>
+
+
+								{%else%}
+								<h1>Most Likey will develop diabetes within 5 years</h1>
+
+
+								{%endif%}
+
+
+							</div> -->
+						</form>
+					</div>
+
+
+
+
+
+				</div>
+			</div>
+
+		</div>
+
+
+
+	</section>
+
+	<section class="ABC2" id="virt">
+
+		<div class="container" id="div2">
+
+
+			<h1 class="h1vtitle">
+				Virtualizations
+			</h1>
+
+
+			<div class="row">
+				<div class="col-sm-4">
+					<h2>BMI vs Family History</h2>
+
+
+					<image src="{{url_for('static',filename = 'images/bmivspedigree.png')}}">
+
+						<p class="lead">The correlation between BMI and Family Pedigree(Diabetes Pedigree Function).
+							Orange respresents positive for diabetes.
+							Green respresents those without diabetes.
+						</p>
+
+				</div>
+				<div class="col-sm-4">
+					<h2>Frequency with Age</h2>
+					<image src="{{url_for('static',filename = 'images/freqvsage.png')}}">
+
+						<p class="lead">Here we see the Frequency of diabetes in people between the ages of 20 and 80.
+						</p>
+				</div>
+				<div class="col-sm-4">
+					<h2>Confusion Matrix</h2>
+					<image src="{{url_for('static',filename = 'images/confusionmatrx.png')}}">
+
+
+						<p class="lead"> Confusion matrices are used to visualize important predictive analytics like
+							recall,
+							specificity,
+							accuracy, and precision. Confusion matrices are useful because they give direct
+							comparisons of values
+							like True Positives, False Positives, True Negatives and False Negatives.</p>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+	</div>
+
+
+
+	<section class="ABC3" id="misc">
+		<h1 class="h1vtitle">
+			Misc Data
+
+		</h1>
+
+		<div class="container" id="div2">
+
+
+
+			<div class="fluid-container">
+				<div class="row no-gutters">
+					<div class="col-md">
+						<div class="menu-image h-100 d-flex align-items-start">
+							<image src="{{url_for('static',filename = 'images/algos.png')}}" class="fluid" alt="fdfsd">
+
+						</div>
+					</div>
+
+					<div class="col-md">
+						<div class="menu-text flex-grow-1 py-4 px-5">
+							<h2 class="main-title text-left">Algorthims Tested</h2>
+							<hr class="hr-style-left" />
+
+							<p> Three different Algorthims were tested; Logistic Regression, K Nearest Neighbors, and
+								Random Forest.
+								The base accuracy was tested against the data to detrmine which may be the most
+								accurate.
+								Logistic Regression was the fastest of the three. After hypertuning the three
+								algorthims,
+								KNN had the most significant increase amongst the three but Logistic Regression provided
+								the most accurate results.
+								Therefore, Logistic Regression was used as the predictor on this webpage.
+							</p>
+							<hr class="hr-style-left" />
+							<h5>Data</h5>
+
+							<table style="width:100%">
+								<tr>
+									<th>Logistic Regression</th>
+									<th>KNN</th>
+									<th>Random Forest</th>
+								</tr>
+								<tr>
+									<td>74.57% Accurate before HP Tune</td>
+									<td>66.23% Accurate before HP Tune</td>
+									<td>72.07% Accurate before HP Tune</td>
+								</tr>
+								<tr>
+									<td>79.87% Accurate after HP Tune</td>
+									<td>77.92.97% Accurate after HP Tune</td>
+									<td>75.97% Accurate after HP Tune</td>
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="fluid-container">
+				<div class="row no-gutters">
+
+
+					<div class="col-md">
+						<div class="menu-text flex-grow-1 py-4 px-5">
+							<h2 class="main-title text-left">Correlation Chart</h2>
+							<hr class="hr-style-left" />
+							<p>
+								This heatmap shows the correlation between the variable tested
+							</p>
+
+						</div>
+					</div>
+					<div class="col-md">
+						<div class="menu-image h-100 d-flex align-items-start">
+							<image src="{{url_for('static',filename = 'images/heatmap.png')}}" class="fluid"
+								alt="fdfsd">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<hr>
+			<div class="fluid-container">
+				<div class="row no-gutters">
+					<div class="col-md">
+						<div class="menu-image h-100 d-flex align-items-start">
+							<image src="{{url_for('static',filename = 'images/importance.png')}}" class="fluid"
+								alt="fdfsd">
+
+						</div>
+					</div>
+
+					<div class="col-md">
+						<div class="menu-text flex-grow-1 py-4 px-5">
+							<h2 class="main-title text-left">Importance of each Variable</h2>
+							<hr class="hr-style-left" />
+
+							<p>
+								Feature Importance refers to techniques that calculate a score for all the input
+								features for a given model.
+								A higher score means that the specific feature will have a larger effect on the model
+								that is being used to predict a certain variable
+								Here.
+
+							</p>
+							<p>
+								The Diabetes Family Pedigree Function had the most significance, followed by BMI,
+								previous Pregnacies, and age.
+								Blood Pressure had the least significance for our training models.
+
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</section>
+
+
+	<!-- Footer -->
+
+	<!-- Copyrights -->
+	<div class="bg-light py-4">
+		<div class="container text-center">
+			<p class="text-muted mb-0 py-2">© Made by a Human.</p>
+		</div>
+	</div>
+	</footer>
+	<!-- End -->
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+	</script>
+	<!-- <script src="{{url_for('static', filename='index.js')}}"></script> -->
+	<!-- <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script> -->
+
+
+
+</body>
+
+</html>

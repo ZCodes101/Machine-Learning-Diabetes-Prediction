@@ -1,0 +1,15 @@
+Flask
+gunicorn
+jupyterlab
+matplotlib
+numpy
+Pillow
+pytest
+requests
+jupyter
+html5lib
+scikit-image
+pandas
+seaborn
+scikit-learn
+Werkzeug

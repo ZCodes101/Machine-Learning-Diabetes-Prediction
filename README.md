@@ -8,7 +8,7 @@
 - While building this project I learned the importance of APIs, how to interconnect frameworks, expanded my knowledge of software engineering, critical thinking and problem solving.  
 
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Tools](#tools)

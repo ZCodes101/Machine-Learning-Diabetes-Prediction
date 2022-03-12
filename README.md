@@ -14,7 +14,7 @@
 - [Tools](#tools)
 
 ## Installation
-To run the web app visit: https://dpa-a.herokuapp.
+To run the web app visit: https://dpa-a.herokuapp.com/
 
 
 ## Tests

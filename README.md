@@ -23,12 +23,14 @@ Test data is provided on the website
 
 ## Tools Used
 - Flask
+- gUnicorn
 - Python
 - JavaScript
 - HTML/CSS
 - Bootstrap
 - jupyter notebook
 - Matplotlib
+- Numpy 
 - Pandas 
 - seaborn
 - sklearn 

@@ -14,7 +14,7 @@
 - [Tools](#tools)
 
 ## Installation
-To run the web app visit: https://dpa-a.herokuapp.com/
+To run the web app visit: https://ml-diabetes.onrender.com/
 
 
 ## Tests

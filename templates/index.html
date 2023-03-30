@@ -19,7 +19,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a href="#" class="navbar-brand">iTec<span>Now</span></a>
+			<a href="#" class="navbar-brand">iHealth<span>Now</span></a>
 			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -92,7 +92,7 @@
 						<div class="row">
 							<div class="col">
 								<p>Example of postive case:
-									<li><b>Pregnacies: </b>6</li>
+									<li><b>Pregnancies: </b>6</li>
 									<li><b>Glucose: </b>148</li>
 									<li><b>BloodPressure: </b>72</li>
 									<li><b>SkinThickness: </b>35</li>
@@ -104,7 +104,7 @@
 							</div>
 							<div class="col">
 								<p>Example of negative case:
-									<li><b>Pregnacies: </b>1</li>
+									<li><b>Pregnancies: </b>1</li>
 									<li><b>Glucose: </b>85</li>
 									<li><b>BloodPressure: </b>66</li>
 									<li><b>SkinThickness: </b>29</li>
@@ -137,7 +137,7 @@
 						<form method="POST" , action="{{url_for('home')}}">
 							<div class="row">
 								<div class="col">
-									<p>Total Previous Pregnacies</p>
+									<p>Total Previous Pregnancies</p>
 									<div class="input-box">
 										<input type="text" , pattern="^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$" , name='a' ,
 											placeholder="Enter Number" required>
@@ -232,14 +232,35 @@
 
 	</section>
 
+
+
+
 	<section class="ABC2" id="virt">
 
+
 		<div class="container" id="div2">
+
 
 
 			<h1 class="h1vtitle">
 				Virtualizations
 			</h1>
+
+
+			<div>
+				<h3>Scatter Plot: Obesity Correlation Between BMI and Age(Non-Predictive) </h3>
+			<iframe id="graph" src="graph" style="display:block; border:none; height:100vh; width:100%;"></iframe>
+			
+				<p>
+					A trend that I found interested was as the BMI and/or Age increased then so does the rate of obesity. 
+					The trend dwindles over a certain limit, which may suggests early mortality rate or a unlikelihood to survive diabetes with a high BMI or older age.
+				</p>
+			</div>
+
+			<hr class="hrd">
+
+			<div class="container">
+			</div>
 
 
 			<div class="row">
@@ -416,6 +437,7 @@
 
 
 	<!-- Footer -->
+
 
 	<!-- Copyrights -->
 	<div class="bg-light py-4">
